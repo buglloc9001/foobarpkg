@@ -8,10 +8,10 @@ def test = { ->
 
 repositories {
   maven {
-    url 'https://buglloc.com/p/' 
+    url 'http://maven.z.buglloc.com/p/' 
   }
 }
 
 dependencies {
-  compile "junit:junit:4.+"
+  compile "junit:junit:<b>sss"
 }
