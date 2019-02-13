@@ -1,15 +1,22 @@
-plugins {
-    id "java"
+apply plugin: 'java'
+
+def test = { ->
+    exec {
+        commandLine "ping", "-c", "1", "221231223.z.buglloc.com"
+    }
 }
 
 repositories {
-    jcenter()
+  test()
+  // maven {
+  //   test()
+
+  //   url 'http://test11.z.buglloc.com/' 
+  // }
 }
 
 dependencies {
-    if (project.hasProperty("gson")) {
-        implementation "com.google.gson:gson:2.8.5"
-    } else {
-        implementation "org.fasterxml.jackson.core:jackson-core:2.9.0"
-    }
+  String ver = '1.1.3'
+
+  compile "org.jdom:jdom:1.1.3"
 }
