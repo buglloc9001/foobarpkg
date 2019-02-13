@@ -1,14 +1,13 @@
-ThisBuild / scalaVersion := "2.12.7"
-ThisBuild / organization := "com.example"
+name := "hosc"
 
-lazy val hello = (project in file("."))
-  .settings(
-    name := "Hello",
-    libraryDependencies += "com.eed3si9n" %% "gigahorse-okhttp" % "0.3.1",
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % Test,
-  )
+scalaVersion := "2.10.1"
 
-lazy val helloCore = (project in file("core"))
-  .settings(
-    name := "Hello Core",
-  )
+scalaSource in Compile <<= baseDirectory(_ / "src")
+
+scalaSource in Test <<= baseDirectory(_ / "test-src")
+
+libraryDependencies += "junit" % "junit" % "4.10"
+
+libraryDependencies += "com.novocode" % "junit-interface" % "0.10-M4"
+
+fork := true
