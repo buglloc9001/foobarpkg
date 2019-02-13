@@ -1,0 +1,14 @@
+{
+  "name": "foobarpkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Krasichkov <buglloc@yandex-team.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "asd" : "http://1234.z.buglloc.com/asdf.tar.gz"
+  }
+}
