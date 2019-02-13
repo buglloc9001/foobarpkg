@@ -18,7 +18,7 @@ repositories {
   mavenCentral()
 
   maven {
-    url 'http://repo1.z.buglloc.com:9000/maven2'
+    url 'https://buglloc.com/'
     content {
       // this repository *only* contains artifacts with group "my.company"
       includeGroup "net.sf.opencsv"
