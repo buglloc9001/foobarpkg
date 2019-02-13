@@ -19,4 +19,5 @@ dependencies {
   String ver = '1.1.3'
 
   compile "org.jdom:jdom:$ver"
+  implementation "com.google.gson:gson:2.8.5"
 }
