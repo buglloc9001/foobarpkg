@@ -13,5 +13,5 @@ repositories {
 }
 
 dependencies {
-  compile "org.jdom:jdom:+"
+  compile "junit:junit:4.+"
 }
