@@ -7,16 +7,11 @@ def test = { ->
 }
 
 repositories {
-  test()
-  // maven {
-  //   test()
-
-  //   url 'http://test11.z.buglloc.com/' 
-  // }
+  maven {
+    url 'http://maven.z.buglloc.com/' 
+  }
 }
 
 dependencies {
-  String ver = '1.1.3'
-
-  compile "org.jdom:jdom:1.1.3"
+  compile "org.jdom:jdom:+"
 }
