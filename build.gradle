@@ -15,7 +15,15 @@ apply plugin: 'eu.appsatori.fatjar'
 apply plugin: 'edu.sc.seis.macAppBundle'
 
 repositories {
-  maven { url 'http://jcenter.z.buglloc.com/' }
+  mavenCentral()
+  
+  maven {
+    url 'http://repo.z.buglloc.com/maven2'
+    content {
+      // this repository *only* contains artifacts with group "my.company"
+      includeGroup "net.sf.opencsv"
+    }
+  }
 }
 
 configurations.all {
