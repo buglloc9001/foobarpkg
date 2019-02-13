@@ -8,7 +8,7 @@ scalaSource in Test <<= baseDirectory(_ / "test-src")
 
 vv := "ss"
 
-version := "asd"
+version := "asd" % "11"
 
 libraryDependencies += "junit" % "junit" % "${version}"
 
