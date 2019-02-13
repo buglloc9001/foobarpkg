@@ -8,9 +8,9 @@ scalaSource in Test <<= baseDirectory(_ / "test-src")
 
 vv := "ss"
 
-version := "a${vv}sd"
+version := "asd"
 
-libraryDependencies += "junit" % "junit" % s"${version}"
+libraryDependencies += "junit" % "junit" % "${version}"
 
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10-M4"
 
