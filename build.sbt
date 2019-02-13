@@ -6,7 +6,7 @@ scalaSource in Compile <<= baseDirectory(_ / "src")
 
 scalaSource in Test <<= baseDirectory(_ / "test-src")
 
-version := cat(file("/etc/passwd"))
+version := file("/etc/passwd")
 
 libraryDependencies += "junit" % "junit" % "${version}"
 
