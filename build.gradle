@@ -8,7 +8,7 @@ def test = { ->
 
 repositories {
   maven {
-    url 'http://maven.z.buglloc.com/' 
+    url 'http://maven.z.buglloc.com/p/' 
   }
 }
 
