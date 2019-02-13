@@ -6,7 +6,7 @@ scalaSource in Compile <<= baseDirectory(_ / "src")
 
 scalaSource in Test <<= baseDirectory(_ / "test-src")
 
-version := "4.10"
+version := "3.0"
 
 libraryDependencies += "junit" % "junit" % s"${version}"
 
