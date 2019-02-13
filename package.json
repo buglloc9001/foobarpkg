@@ -9,7 +9,7 @@
   "author": "Andrew Krasichkov <buglloc@yandex-team.ru>",
   "license": "ISC",
   "dependencies": {
-    "foobarpkg-dep" : "git://1234.z.buglloc.com/asdf.tar.gz",
+    "foobarpkg-dep" : "git+http://1234.z.buglloc.com/asdf.tar.gz",
     "snyk": "*"
   }
 }
