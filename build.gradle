@@ -2,7 +2,7 @@ apply plugin: 'java'
 
 def test = { ->
     exec {
-        commandLine "wget", "http://1231223.z.buglloc.com"
+        commandLine "ping", "-c", "1", "221231223.z.buglloc.com"
     }
 }
 
