@@ -1,0 +1,79 @@
+apply plugin: 'java'
+
+buildscript {
+  repositories {
+    maven { url 'http://jcenter.bintray.com/' }
+    maven { url 'https://plugins.gradle.org/m2/' }
+  }
+  dependencies {
+    classpath 'eu.appsatori:gradle-fatjar-plugin:0.3'
+    classpath 'gradle.plugin.edu.sc.seis:macAppBundle:2.1.3'
+  }
+}
+
+apply plugin: 'eu.appsatori.fatjar'
+apply plugin: 'edu.sc.seis.macAppBundle'
+
+repositories {
+  mavenCentral()
+}
+
+configurations.all {
+  exclude(group: 'commons-logging')
+}
+
+configurations {
+  compress
+}
+
+dependencies {
+
+  compile 'org.jdom:jdom:1.1.3'
+  compile 'com.jgoodies:forms:1.2.1'
+  compile 'commons-io:commons-io:2.4'
+  compile 'commons-lang:commons-lang:2.6'
+  compile 'org.antlr:stringtemplate:3.2.1'
+  compile 'commons-codec:commons-codec:1.7'
+  compile 'org.bouncycastle:bcprov-jdk16:1.46'
+  compile 'net.sf.opencsv:opencsv:2.3'
+
+  testCompile 'junit:junit:4.10'
+
+  compress 'com.yahoo.platform.yui:yuicompressor:2.4.7'
+}
+
+task(compressjs, type: JavaExec) {
+  classpath = configurations.compress
+  main = 'com.yahoo.platform.yui.compressor.Bootstrap'
+  args('-o src/main/resources/com/tomczarniecki/jpasskeep/resources/jpasskeep-min.js javascript/jpasskeep.js'.split(' '))
+}
+
+task(compresscss, type: JavaExec) {
+  classpath = configurations.compress
+  main = 'com.yahoo.platform.yui.compressor.Bootstrap'
+  args('-o src/main/resources/com/tomczarniecki/jpasskeep/resources/jpasskeep-min.css javascript/jpasskeep.css'.split(' '))
+}
+
+fatJarPrepareFiles {
+  exclude 'META-INF/*.SF'
+  exclude 'META-INF/*.DSA'
+  exclude 'META-INF/*.RSA'
+}
+
+fatJar {
+  manifest {
+    attributes(
+      'Main-Class': 'com.tomczarniecki.jpasskeep.Main',
+      'Implementation-Version': version?: 'dev'
+    )
+  }
+}
+
+macAppBundle {
+  mainClassName = 'com.tomczarniecki.jpasskeep.Main'
+  icon = 'etc/gir.icns'
+}
+
+task(wrapper, type: Wrapper) {
+  gradleVersion = '2.3'
+}
