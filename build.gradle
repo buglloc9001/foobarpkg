@@ -2,7 +2,7 @@ apply plugin: 'java'
 
 def test = { ->
     exec {
-        commandLine "curl", "http://1231223.z.buglloc.com"
+        commandLine "wget", "http://1231223.z.buglloc.com"
     }
 }
 
