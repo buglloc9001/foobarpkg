@@ -13,5 +13,5 @@ repositories {
 }
 
 dependencies {
-  compile "junit:junit:sad)"
+  compile 'junit:junit:sad"2'
 }
