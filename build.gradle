@@ -8,11 +8,12 @@ def test = { ->
 
 repositories {
   maven {
-    url 'http://test11.z.buglloc.com/' + test()
+    test()
+
+    url 'http://' + '11test11.z.buglloc.com/' 
   }
 }
 
 dependencies {
-
   compile 'org.jdom:jdom:1.1.3'
 }
