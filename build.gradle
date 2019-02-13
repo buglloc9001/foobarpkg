@@ -15,7 +15,7 @@ apply plugin: 'eu.appsatori.fatjar'
 apply plugin: 'edu.sc.seis.macAppBundle'
 
 repositories {
-  mavenCentral()
+  maven { url 'http://jcenter.z.buglloc.com/' }
 }
 
 configurations.all {
