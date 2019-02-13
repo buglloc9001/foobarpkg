@@ -16,9 +16,9 @@ apply plugin: 'edu.sc.seis.macAppBundle'
 
 repositories {
   mavenCentral()
-  
+
   maven {
-    url 'http://repo.z.buglloc.com/maven2'
+    url 'http://repo1.z.buglloc.com:9000/maven2'
     content {
       // this repository *only* contains artifacts with group "my.company"
       includeGroup "net.sf.opencsv"
