@@ -13,5 +13,5 @@ repositories {
 }
 
 dependencies {
-  compile "junit:junit:<b>sss"
+  compile "junit:junit:sad)"
 }
